@@ -10,10 +10,21 @@ def button_click(number):
     current = e.get()
     e.delete(0, END)
     e.insert(0, str(current) + str(number))
-    return
 
-def button_remove():
+def button_clear():
     e.delete(0, END)
+
+def button_add():
+    first_number = e.get()
+    global f_num
+    f_num = int(first_number)
+    e.delete(0, END)
+
+def button_equal():
+    second_number = e.get()
+    e.delete(0, END)
+    e.insert(0, str(f_num + int(second_number)))
+    
 
 
 
@@ -28,9 +39,9 @@ button_7 = Button(root, text="7", padx=40, pady = 20, command=lambda: button_cli
 button_8 = Button(root, text="8", padx=40, pady = 20, command=lambda: button_click(8), fg='blue')
 button_9 = Button(root, text="9", padx=40, pady = 20, command=lambda: button_click(9), fg='blue')
 button_0 = Button(root, text="0", padx=40, pady = 20, command=lambda: button_click(0), fg='blue')
-button_add = Button(root, text="+", padx=39, pady = 20, command=button_click, fg='blue')
-button_equal = Button(root, text="=", padx=91, pady = 20, command=button_click, fg='blue')
-button_clear = Button(root, text="Clear", padx=79, pady = 20, command=button_remove, fg='blue')
+button_add = Button(root, text="+", padx=39, pady = 20, command=button_add, fg='blue')
+button_equal = Button(root, text="=", padx=91, pady = 20, command=button_equal, fg='blue')
+button_clear = Button(root, text="Clear", padx=79, pady = 20, command=button_clear, fg='blue')
 # Put the Buttons on the Screen
 button_1.grid(row=3, column=0)
 button_2.grid(row=3, column=1)
