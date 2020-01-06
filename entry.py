@@ -1,18 +1,39 @@
 from tkinter import *
 
 root = Tk()
+root.title("Simple Calculator")
 
-e = Entry(root, width = 50, bg = 'blue', fg = 'white', borderwidth=5)
-e.pack()
-e.insert(0, "Enter Your Name:  ")
+e = Entry(root, width = 35, borderwidth=5)
+e.grid(row=0, column=0, columnspan=3, padx=10, pady=10)
+
+def button_add():
+    return
 
 
-def myClick():
-    hello = "Hello  " + e.get()
-    myLabel = Label(root, text= hello)
-    myLabel.pack()
+# Define Buttons
+button_1 = Button(root, text="1", padx=40, pady = 20, command=button_add, fg='blue')
+button_1 = Button(root, text="2", padx=40, pady = 20, command=button_add, fg='blue')
+button_1 = Button(root, text="3", padx=40, pady = 20, command=button_add, fg='blue')
+button_1 = Button(root, text="4", padx=40, pady = 20, command=button_add, fg='blue')
+button_1 = Button(root, text="5", padx=40, pady = 20, command=button_add, fg='blue')
+button_1 = Button(root, text="6", padx=40, pady = 20, command=button_add, fg='blue')
+button_1 = Button(root, text="7", padx=40, pady = 20, command=button_add, fg='blue')
+button_1 = Button(root, text="8", padx=40, pady = 20, command=button_add, fg='blue')
+button_1 = Button(root, text="9", padx=40, pady = 20, command=button_add, fg='blue')
+button_1 = Button(root, text="0", padx=40, pady = 20, command=button_add, fg='blue')
 
-myButton = Button(root, text="Please Enter Your Name", padx=50, pady = 20, command=myClick, fg='blue')
-myButton.pack()
+# Put the Buttons on the Screen
+button_1.grid(row=3, column=0)
+button_2.grid(row=3, column=1)
+button_3.grid(row=3, column=2)
+
+button_4.grid(row=2, column=0)
+button_5.grid(row=2, column=1)
+button_6.grid(row=2, column=2)
+
+button_7.grid(row=1, column=0)
+button_8.grid(row=1, column=1)
+button_9.grid(row=1, column=2)
+
 
 root.mainloop()
